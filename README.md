@@ -1,6 +1,6 @@
 # Email signature
 
-A Node.js web application serving an email signature, designed for deployment on AWS Elastic Beanstalk.
+A Node.js web application serving an email signature.
 
 ## Preview
 
@@ -32,23 +32,14 @@ For development with auto-reload:
 npm run dev
 ```
 
-## AWS Elastic Beanstalk Deployment
+## Application Structure
 
-This application is configured for deployment on AWS Elastic Beanstalk with CodePipeline.
-
-### Deployment Structure
 - `app.js` - Main Node.js application server
 - `package.json` - Node.js dependencies and scripts
 - `public/` - Static files including signature.html
-- `.ebextensions/` - AWS Elastic Beanstalk configuration
 
-### Endpoints
+## Endpoints
+
 - `/` - Main email signature page
 - `/signature` - Direct access to signature
-- `/health` - Health check endpoint for AWS load balancer
-
-### AWS CodePipeline Setup
-1. Create a CodePipeline with this GitHub repository as source
-2. Use AWS CodeBuild for build stage (optional, since this is a simple Node.js app)
-3. Deploy to Elastic Beanstalk environment configured for Node.js
-4. The application will be available at your Elastic Beanstalk environment URL
+- `/health` - Health check endpoint
